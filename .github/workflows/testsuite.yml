@@ -6,7 +6,7 @@ name: Test Suite
 jobs:
   iOS:
     name: Unit Tests
-    runs-on: ${{ matrix.os }} ${{ matrix.version }}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [macOS-latest]
