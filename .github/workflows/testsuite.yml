@@ -9,8 +9,8 @@ jobs:
     runs-on: ${{ matrix.os }} ${{ matrix.version }}
     strategy:
       matrix:
-        os: [iOS]
-        version: [13]
+        os: [macOS-latest]
+        version: [iOS13]
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -36,6 +36,6 @@ jobs:
           fastlane $lane
           bash ./Scripts/run_examples_tests.sh
     env:
-      target: ably-${{ matrix.os }}
-      platform: ${{ matrix.os }}
-      lane: test_${{ matrix.os }}${{ matrix.version }}
+      target: ably-iOS
+      platform: iOS
+      lane: test_${{ matrix.version }}
