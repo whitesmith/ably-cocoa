@@ -1,6 +1,14 @@
 default_platform(:ios)
 
 platform :ios do
+  
+  lane :test_iOS13 do
+    run_tests(
+      scheme: "Ably-iOS-Tests",
+      devices: ["iPhone 11 Pro (13.6)"],
+      xcargs: { ABLY_ENV: ENV['ABLY_ENV'] }
+    )
+  end
 
   lane :test_iOS12 do
     run_tests(
