@@ -32,6 +32,7 @@ jobs:
 
       - name: Build
         run: |
+          gem install bundler -v 1.17.3
           export ABLY_ENV="sandbox"
           fastlane $lane
           bash ./Scripts/run_examples_tests.sh
