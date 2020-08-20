@@ -31,6 +31,7 @@ jobs:
 
       - name: Build
         run: |
+          xcrun simctl erase all
           export ABLY_ENV="sandbox"
           fastlane $lane
           bash ./Scripts/run_examples_tests.sh
