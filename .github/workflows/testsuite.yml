@@ -34,7 +34,6 @@ jobs:
           xcrun simctl erase all
           export ABLY_ENV="sandbox"
           FASTLANE_EXPLICIT_OPEN_SIMULATOR=1 fastlane $lane
-          bash ./Scripts/run_examples_tests.sh
     env:
       target: ably-iOS
       platform: iOS
