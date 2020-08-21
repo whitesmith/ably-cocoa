@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os: [macOS-latest]
-        version: [iOS13]
+        version: [macOS]
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -31,10 +31,9 @@ jobs:
 
       - name: Build
         run: |
-          xcrun simctl erase all
           export ABLY_ENV="sandbox"
-          FASTLANE_EXPLICIT_OPEN_SIMULATOR=1 fastlane $lane
+          fastlane $lane
     env:
-      target: ably-iOS
-      platform: iOS
+      target: ably-macOS
+      platform: Mac
       lane: test_${{ matrix.version }}
