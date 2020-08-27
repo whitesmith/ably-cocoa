@@ -32,6 +32,7 @@ jobs:
       - name: Build
         run: |
           export ABLY_ENV="sandbox"
+          git submodule update --init --recursive
           xcodebuild -scheme Ably-macOS-Tests -project ./Ably.xcodeproj ABLY_ENV=sandbox clean build test
     env:
       target: ably-macOS
